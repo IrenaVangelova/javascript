@@ -1,16 +1,3 @@
-// function convert(degree) {
-//     var x;
-//     if (degree == "C") {
-//       x = document.getElementById("c").value * 9 / 5 + 32;
-//       document.getElementById("f").value = Math.round(x);
-//     } else {
-//       x = (document.getElementById("f").value -32) * 5 / 9;
-//       document.getElementById("c").value = Math.round(x);
-//     }
-//   }
-
-
-
 
 function celToFahr(celsius) {
     let cTemp = celsius
@@ -50,17 +37,19 @@ palindrome('123321')
 function longestWord(str){
     let split = str.split(' ')
     let longest = 0
-    let word
+    let newArray  = []
     for(let i = 0; i < split.length; i++){
         if(split[i].length > longest) {
+            newArray = []
             longest = split[i].length
-            word = split[i]
+            newArray.push(split[i])
         }
-
-        
+        else if (split[i].length === longest) {
+            newArray.push(split[i])
+        }
     }
-    return word
+    return newArray
 }
 
-console.log(longestWord("Irena brrr aak a  irena irena"))
+console.log(longestWord("Irena brrr aak a  irenb irena"))
 
